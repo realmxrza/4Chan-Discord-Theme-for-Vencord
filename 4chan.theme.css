@@ -1,0 +1,290 @@
+/**
+ * @name 4chan Theme
+ * @description Classic 4chan Yotsuba style
+ * @author realmxrza
+ * @version 2.0.5
+ */
+
+:root {
+  --green-chan: #117743;      /* Classic Greentext */
+}
+
+/* ============================
+   FORCED GREEN USERNAMES
+   ============================ */
+/* This specifically targets usernames in the chat to override role colors */
+[class*="message-"] [class*="username"], 
+[class*="message-"] [class*="nickname"], 
+[class*="message-"] span[style*="color"],
+[class*="username_"], 
+[class*="nickname_"], 
+span[style*="color"] {
+  color: var(--green-chan) !important;
+}
+
+/* ============================
+   THEME COLORS
+   ============================ */
+.theme-dark {
+  --chan-bg: #1d1f21;
+  --chan-post-bg: #282a2e;
+  --chan-border: #282a2e;
+  --chan-highlight: #373b41;
+  --chan-text: #c5c8c6;
+  --chan-name: var(--green-chan);
+  --chan-quote: var(--green-chan);
+  --chan-link: #81a2be;
+  --chan-link-hover: #cc6666;
+  
+  --background-primary: var(--chan-bg);
+  --background-secondary: var(--chan-bg);
+  --background-secondary-alt: var(--chan-bg);
+  --background-tertiary: var(--chan-post-bg);
+  --background-accent: var(--chan-highlight);
+  --background-floating: var(--chan-post-bg);
+  --background-modifier-hover: transparent;
+  --background-modifier-active: rgba(255, 255, 255, 0.1);
+  --background-modifier-selected: var(--chan-highlight);
+  --channeltextarea-background: var(--chan-post-bg);
+  --text-normal: var(--chan-text);
+  --text-muted: #969896;
+  --text-link: var(--chan-link);
+  --header-primary: var(--chan-text);
+  --header-secondary: #969896;
+  --interactive-normal: var(--chan-text);
+  --interactive-hover: var(--chan-link-hover);
+  --interactive-active: var(--chan-link-hover);
+}
+
+.theme-light {
+  --chan-bg: #EEF2FF;
+  --chan-post-bg: #D6DAF0;
+  --chan-border: #B7C5D9;
+  --chan-highlight: #D6BAD0;
+  --chan-text: #000000;
+  --chan-name: #117743;
+  --chan-quote: #789922;
+  --chan-link: #34345C;
+  --chan-link-hover: #DD0000;
+  
+  --background-primary: var(--chan-bg);
+  --background-secondary: var(--chan-bg);
+  --background-secondary-alt: var(--chan-bg);
+  --background-tertiary: var(--chan-post-bg);
+  --background-accent: var(--chan-name);
+  --background-floating: var(--chan-post-bg);
+  --background-modifier-hover: rgba(17, 119, 67, 0.05);
+  --background-modifier-active: rgba(17, 119, 67, 0.1);
+  --background-modifier-selected: var(--chan-highlight);
+  --channeltextarea-background: var(--chan-post-bg);
+  --text-normal: var(--chan-text);
+  --text-muted: #666666;
+  --text-link: var(--chan-link);
+  --header-primary: var(--chan-name);
+  --header-secondary: #666666;
+  --interactive-normal: var(--chan-name);
+  --interactive-hover: var(--chan-link-hover);
+  --interactive-active: var(--chan-link-hover);
+}
+
+/* ============================
+   GLOBAL RESET
+   ============================ */
+* {
+  font-family: Arial, Helvetica, sans-serif !important;
+  border-radius: 0px !important;
+}
+
+*:not([class*="layer"]):not([class*="modal"]):not([class*="image"]):not([class*="attachment"]):not([class*="media"]) {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* ============================
+   LAYOUT & BACKGROUNDS
+   ============================ */
+[class*="chat-"], [class*="content-"], [class*="messagesWrapper-"], 
+[class*="scrollerInner-"], [class*="guilds-"], [class*="sidebar-"], 
+[class*="members-"], aside, main {
+  background-color: var(--chan-bg) !important;
+}
+
+[class*="title-"], [class*="toolbar-"] {
+  background-color: var(--chan-post-bg) !important;
+  border-bottom: 1px solid var(--chan-border) !important;
+}
+
+/* ============================
+   MESSAGE BUBBLES
+   ============================ */
+[class*="message-"]:not([class*="repliedMessage"]):not([class*="systemMessage"]),
+li[id*="chat-messages"],
+div[id^="chat-messages"] {
+  background-color: var(--chan-post-bg) !important;
+  border: 1px solid var(--chan-border) !important;
+  border-left: none !important;
+  border-top: none !important;
+  margin: 6px 16px 0 1em !important;
+  padding: 8px 12px !important;
+  min-width: 325px !important;
+  display: block !important;
+  position: relative !important;
+}
+
+[class*="message-"]:not([class*="repliedMessage"]):hover {
+  background-color: var(--chan-post-bg) !important;
+}
+
+[class*="message-"][class*="mentioned"] {
+  background-color: var(--chan-highlight) !important;
+}
+
+[class*="cozy-"] {
+  background-color: var(--chan-post-bg) !important;
+}
+
+/* ============================
+   CONTENT & GRID
+   ============================ */
+[class*="contents-"] {
+  display: grid !important;
+  grid-template-columns: 40px 1fr !important;
+  gap: 12px !important;
+  align-items: start !important;
+}
+
+[class*="contents-"] > div {
+  grid-column: 2 !important;
+}
+
+[class*="container-"] > [class*="base-"],
+[class*="messageAttachment-"],
+[class*="imageWrapper-"] {
+  grid-column: 2;
+}
+
+/* ============================
+   AVATARS
+   ============================ */
+[class*="avatar-"]:not([class*="replyAvatar-"]) {
+  grid-column: 1 !important;
+  grid-row: 1 / span 999 !important;
+  margin: 0 !important;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+img[class*="avatar-"], [class*="avatar-"] img {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 0px !important;
+}
+
+[class*="messageContent-"] img, 
+[class*="imageWrapper-"] img,
+[class*="attachmentContentContainer-"] img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100%;
+}
+
+[class*="avatarDecoration-"], [class*="botTag-"], [class*="badge-"], [class*="systemTag-"] {
+  display: none !important;
+}
+
+[class*="wrapper-"][class*="guild"] > *, [class*="avatar-"] img {
+  border-radius: 0px !important;
+  clip-path: none !important;
+}
+
+/* ============================
+   TYPOGRAPHY
+   ============================ */
+h3[class*="header-"] {
+  display: flex !important;
+  align-items: baseline !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+}
+
+[class*="timestamp-"] {
+  color: var(--text-muted) !important;
+  font-size: 12px !important;
+}
+
+[class*="messageContent-"], [class*="markup-"] {
+  color: var(--chan-text) !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+[class*="mention"] {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  color: var(--chan-link-hover) !important;
+}
+
+blockquote {
+  color: var(--chan-quote) !important;
+  border-left: 2px solid var(--chan-quote) !important;
+}
+
+/* ============================
+   REPLIES & INPUT
+   ============================ */
+[class*="repliedMessage-"] {
+  display: flex !important;
+  margin-bottom: 4px !important;
+  font-size: 12px !important;
+  background: transparent !important;
+}
+
+[class*="repliedMessage-"]::before, [class*="spine-"] {
+  display: none !important;
+}
+
+[class*="channelTextArea-"] {
+  background-color: var(--chan-post-bg) !important;
+  border: 1px solid var(--chan-border) !important;
+}
+
+button[aria-label*="emoji" i], button[aria-label*="GIF" i], button[aria-label*="Sticker" i] {
+  display: none !important;
+}
+
+/* ============================
+   SQUARE SCROLLBARS
+   ============================ */
+::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--chan-bg) !important;
+  border-radius: 0px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--chan-border) !important;
+  border-radius: 0px !important;
+  border: 1px solid var(--chan-bg) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--chan-highlight) !important;
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--chan-bg) !important;
+}
+
+/* ============================
+   INTERACTABLES
+   ============================ */
+a { color: var(--chan-link) !important; text-decoration: underline !important; }
+a:hover { color: var(--chan-link-hover) !important; }
+
+button[class*="button-"] {
+  background-color: var(--chan-link) !important;
+  border-radius: 0px !important;
+}
