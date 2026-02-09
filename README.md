@@ -2,7 +2,7 @@
 <img width="960" height="540" alt="image" src="https://github.com/user-attachments/assets/d89f6881-785b-4d6f-8a05-3ddee6a2a363" />
 
 ## 🛠 Installation Instructions
-
+[Download 4chan.theme.css](./4chan.theme.css)
 1. **Download** the file `4chan.theme.css` from this repository.
 2. Open Discord and navigate to **Vencord Settings** > **Themes**.
 3. Click the **Open Themes Folder** button.
