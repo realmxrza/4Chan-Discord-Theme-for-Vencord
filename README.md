@@ -1,5 +1,5 @@
 # 4chan Theme for Discord
-A classic imageboard-inspired aesthetic overhaul for Discord, optimized for the Vencord client.
+<img width="960" height="540" alt="image" src="https://github.com/user-attachments/assets/d89f6881-785b-4d6f-8a05-3ddee6a2a363" />
 
 ## 🛠 Installation Instructions
 
