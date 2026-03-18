@@ -1,5 +1,8 @@
 # 4chan Theme for Discord
 <img width="960" height="540" alt="image" src="https://github.com/user-attachments/assets/d89f6881-785b-4d6f-8a05-3ddee6a2a363" />
+<img width="523" height="235" alt="image" src="https://github.com/user-attachments/assets/91bb36a6-8f53-4229-a37f-e28f4f7a9319" />
+<img width="523" height="235" alt="image" src="https://github.com/user-attachments/assets/9144ae83-2bc6-43a1-83f2-d80217a0625b" />
+
 
 ## 🛠 Installation Instructions
 [Download 4chan.theme.css](./4chan.theme.css)
